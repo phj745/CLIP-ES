@@ -216,11 +216,11 @@ def perform(process_id, dataset_list, args, model, bg_text_features, fg_text_fea
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--img_root', type=str, default='/home/xxx/datasets/VOC2012/JPEGImages')
+    parser.add_argument('--img_root', type=str, default=r"E:\Data\CV\VOCdevkit\VOC2012\JPEGImages")
     parser.add_argument('--split_file', type=str, default='./voc12/train.txt')
-    parser.add_argument('--cam_out_dir', type=str, default='./final/ablation/baseline')
-    parser.add_argument('--model', type=str, default='/home/xxx/pretrained_models/clip/ViT-B-16.pt')
-    parser.add_argument('--num_workers', type=int, default=1)
+    parser.add_argument('--cam_out_dir', type=str, default=r"E:\Data\CV\CLIP-ES\CAM")
+    parser.add_argument('--model', type=str, default="ViT-B/16")
+    parser.add_argument('--num_workers', type=int, default=15)
     args = parser.parse_args()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
